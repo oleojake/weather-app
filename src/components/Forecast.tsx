@@ -4,10 +4,11 @@ import React from "react";
 
 interface Props {
 	weather: CurrentWeaterVM;
+	degrees: string;
 }
 
 export const Forecast: React.FC<Props> = (props) => {
-	const { weather } = props;
+	const { weather, degrees } = props;
 
 	const [value, setValue] = React.useState(0);
   const handleChange = (event: React.SyntheticEvent, newValue: number) => {
@@ -25,11 +26,11 @@ export const Forecast: React.FC<Props> = (props) => {
 			allowScrollButtonsMobile
 			value={value}
 			onChange={handleChange}
-			sx={{ backgroundColor: "#e887a1", mx: -2, py: 1, mt: 2 }}
+			sx={{ backgroundColor: "secondary.main", mx: -2, py: 1, mt: 2 }}
 		>
 			{weather.forecast.map((forecast, index) => (
 					<Box key={index} mx={2}>
-						<Typography variant="body1" component="p" sx={{ fontWeight: 800 }}>
+						<Typography variant="body1" component="p" sx={{ fontWeight: 800,}}>
 							{getWeekDay(new Date(forecast.date))} -{" "}
 							{new Date(forecast.date).getDate()}
 						</Typography>
@@ -41,10 +42,10 @@ export const Forecast: React.FC<Props> = (props) => {
 							my={-1}
 						/>
 						<Typography variant="body2" component="p" sx={{ fontWeight: 500 }}>
-							Max: {Math.round(forecast.day.maxtemp_c)} °
+							Max: {degrees === "C" ? Math.round(forecast.day.maxtemp_c) : Math.round(forecast.day.maxtemp_f)} °
 						</Typography>
 						<Typography variant="body2" component="p" sx={{ fontWeight: 500 }}>
-							Min: {Math.round(forecast.day.mintemp_c)} °
+							Min: {degrees === "C" ? Math.round(forecast.day.mintemp_c) : Math.round(forecast.day.mintemp_f)} °
 						</Typography>
 					</Box>
 			))}

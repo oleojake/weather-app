@@ -27,7 +27,7 @@ export const DetailsInfo: React.FC<Props> = (props) => {
 						{degrees === "C" ? weather.forecast[0].day.maxtemp_c : weather.forecast[0].day.maxtemp_f} º
 					</Typography>
 				</Box>
-				<Divider sx={{ my: 0.5, borderColor: "white" }} />
+				<Divider sx={{ my: 0.5, borderColor: "primary.main" }} />
 				<Box sx={{ display: "flex", justifyContent: "space-between" }}>
 					<Typography variant="body1" component="p" sx={{ fontWeight: "500" }}>
 						Low Temperature
@@ -36,7 +36,7 @@ export const DetailsInfo: React.FC<Props> = (props) => {
 						{degrees === "C" ? weather.forecast[0].day.mintemp_c : weather.forecast[0].day.mintemp_f} °
 					</Typography>
 				</Box>
-				<Divider sx={{ my: 0.5, borderColor: "white" }} />
+				<Divider sx={{ my: 0.5, borderColor: "primary.main" }} />
 				<Box sx={{ display: "flex", justifyContent: "space-between" }}>
 					<Typography variant="body1" component="p" sx={{ fontWeight: "500" }}>
 						Humidity
@@ -45,7 +45,7 @@ export const DetailsInfo: React.FC<Props> = (props) => {
 						{weather.humidity} %
 					</Typography>
 				</Box>
-				<Divider sx={{ my: 0.5, borderColor: "white" }} />
+				<Divider sx={{ my: 0.5, borderColor: "primary.main" }} />
 				<Box sx={{ display: "flex", justifyContent: "space-between" }}>
 					<Typography variant="body1" component="p" sx={{ fontWeight: "500" }}>
 						Feelslike
@@ -54,7 +54,7 @@ export const DetailsInfo: React.FC<Props> = (props) => {
 						{degrees === "C" ? weather.feelslike_c : weather.feelslike_f} °
 					</Typography>
 				</Box>
-				<Divider sx={{ my: 0.5, borderColor: "white" }} />
+				<Divider sx={{ my: 0.5, borderColor: "primary.main" }} />
 				<Box sx={{ display: "flex", justifyContent: "space-between" }}>
 					<Typography variant="body1" component="p" sx={{ fontWeight: "500" }}>
 						Wind Speed
@@ -63,7 +63,7 @@ export const DetailsInfo: React.FC<Props> = (props) => {
 						{weather.wind_kph} km/h
 					</Typography>
 				</Box>
-				<Divider sx={{ my: 0.5, borderColor: "white" }} />
+				<Divider sx={{ my: 0.5, borderColor: "primary.main" }} />
 				<Box sx={{ display: "flex", justifyContent: "space-between" }}>
 					<Typography variant="body1" component="p" sx={{ fontWeight: "500" }}>
 						Wind Degree
@@ -72,7 +72,7 @@ export const DetailsInfo: React.FC<Props> = (props) => {
 						{weather.wind_degree} º
 					</Typography>
 				</Box>
-				<Divider sx={{ my: 0.5, borderColor: "white" }} />
+				<Divider sx={{ my: 0.5, borderColor: "primary.main" }} />
 				<Box sx={{ display: "flex", justifyContent: "space-between" }}>
 					<Typography variant="body1" component="p" sx={{ fontWeight: "500" }}>
 						Wind Direction
@@ -81,7 +81,7 @@ export const DetailsInfo: React.FC<Props> = (props) => {
 						{weather.wind_dir}
 					</Typography>
 				</Box>
-				<Divider sx={{ my: 0.5, borderColor: "white" }} />
+				<Divider sx={{ my: 0.5, borderColor: "primary.main" }} />
 				<Box sx={{ display: "flex", justifyContent: "space-between" }}>
 					<Typography variant="body1" component="p" sx={{ fontWeight: "500" }}>
 						Clouds
@@ -90,7 +90,7 @@ export const DetailsInfo: React.FC<Props> = (props) => {
 						{weather.cloud} %
 					</Typography>
 				</Box>
-				<Divider sx={{ my: 0.5, borderColor: "white" }} />
+				<Divider sx={{ my: 0.5, borderColor: "primary.main" }} />
 				<Box sx={{ display: "flex", justifyContent: "space-between" }}>
 					<Typography variant="body1" component="p" sx={{ fontWeight: "500" }}>
 						Precipitations
@@ -99,7 +99,7 @@ export const DetailsInfo: React.FC<Props> = (props) => {
 						{weather.precip_mm} mm
 					</Typography>
 				</Box>
-				<Divider sx={{ my: 0.5, borderColor: "white" }} />
+				<Divider sx={{ my: 0.5, borderColor: "primary.main" }} />
 				<Box sx={{ display: "flex", justifyContent: "space-between" }}>
 					<Typography variant="body1" component="p" sx={{ fontWeight: "500" }}>
 						UV Index
@@ -108,7 +108,7 @@ export const DetailsInfo: React.FC<Props> = (props) => {
 						{weather.uv} uv
 					</Typography>
 				</Box>
-				<Divider sx={{ my: 0.5, borderColor: "white" }} />
+				<Divider sx={{ my: 0.5, borderColor: "primary.main" }} />
 			</Box>
 		</Box>
 	);

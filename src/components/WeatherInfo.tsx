@@ -24,7 +24,7 @@ export const WeatherInfo: React.FC<Props> = (props) => {
 			}}
 		>
 			<MainInfo weather={weather} degrees={degrees}/>
-			<Forecast weather={weather} />
+			<Forecast weather={weather} degrees={degrees}/>
 			<DetailsInfo weather={weather} degrees={degrees}/>
 
 			<WeatherApiSignature />
