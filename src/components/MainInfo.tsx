@@ -3,10 +3,11 @@ import { CurrentWeaterVM } from "../weather.vm";
 
 interface Props {
 	weather: CurrentWeaterVM;
+	degrees: string;
 }
 
 export const MainInfo: React.FC<Props> = (props) => {
-	const { weather } = props;
+	const { weather, degrees } = props;
 	return (
 		<Box>
 			<Box
@@ -25,7 +26,7 @@ export const MainInfo: React.FC<Props> = (props) => {
 				/>
 				<Divider orientation="vertical" flexItem sx={{ borderRightWidth: 0.5 }} />
 				<Typography variant="h2" component="p" sx={{ fontWeight: "500" }}>
-					{weather.temperatureC} °
+					{degrees === "C" ? weather.temperatureC : weather.temperatureF} °
 				</Typography>
 			</Box>
 

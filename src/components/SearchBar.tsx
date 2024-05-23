@@ -20,7 +20,7 @@ export const SearchBar: React.FC<Props> = (props) => {
 			<TextField
 				id="city"
 				label="Enter your city"
-				variant="standard"
+				variant="filled"
 				size="small"
 				required
 				value={city}

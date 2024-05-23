@@ -7,10 +7,11 @@ import { Forecast } from "./Forecast";
 
 interface Props {
 	weather: CurrentWeaterVM;
+	degrees: string;
 }
 
 export const WeatherInfo: React.FC<Props> = (props) => {
-	const { weather } = props;
+	const { weather, degrees } = props;
 
 	return (
 		<Box
@@ -22,9 +23,9 @@ export const WeatherInfo: React.FC<Props> = (props) => {
 				textAlign: "center",
 			}}
 		>
-			<MainInfo weather={weather} />
+			<MainInfo weather={weather} degrees={degrees}/>
 			<Forecast weather={weather} />
-			<DetailsInfo weather={weather} />
+			<DetailsInfo weather={weather} degrees={degrees}/>
 
 			<WeatherApiSignature />
 		</Box>

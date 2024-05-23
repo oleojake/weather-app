@@ -3,10 +3,11 @@ import { CurrentWeaterVM } from "../weather.vm";
 
 interface Props {
 	weather: CurrentWeaterVM;
+	degrees: string;
 }
 
 export const DetailsInfo: React.FC<Props> = (props) => {
-	const { weather } = props;
+	const { weather, degrees } = props;
 	return (
 		<Box>
 			<Typography
@@ -23,7 +24,7 @@ export const DetailsInfo: React.FC<Props> = (props) => {
 						High Temperature
 					</Typography>
 					<Typography variant="body1" component="p">
-						{weather.forecast[0].day.maxtemp_c} º
+						{degrees === "C" ? weather.forecast[0].day.maxtemp_c : weather.forecast[0].day.maxtemp_f} º
 					</Typography>
 				</Box>
 				<Divider sx={{ my: 0.5, borderColor: "white" }} />
@@ -32,7 +33,7 @@ export const DetailsInfo: React.FC<Props> = (props) => {
 						Low Temperature
 					</Typography>
 					<Typography variant="body1" component="p">
-						{weather.forecast[0].day.mintemp_c} º
+						{degrees === "C" ? weather.forecast[0].day.mintemp_c : weather.forecast[0].day.mintemp_f} °
 					</Typography>
 				</Box>
 				<Divider sx={{ my: 0.5, borderColor: "white" }} />
@@ -50,7 +51,7 @@ export const DetailsInfo: React.FC<Props> = (props) => {
 						Feelslike
 					</Typography>
 					<Typography variant="body1" component="p">
-						{weather.feelslike_c} º
+						{degrees === "C" ? weather.feelslike_c : weather.feelslike_f} °
 					</Typography>
 				</Box>
 				<Divider sx={{ my: 0.5, borderColor: "white" }} />
