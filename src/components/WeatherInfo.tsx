@@ -23,9 +23,9 @@ export const WeatherInfo: React.FC<Props> = (props) => {
 				textAlign: "center",
 			}}
 		>
-			<MainInfo weather={weather} degrees={degrees}/>
-			<Forecast weather={weather} degrees={degrees}/>
-			<DetailsInfo weather={weather} degrees={degrees}/>
+			<MainInfo weather={weather} degrees={degrees} />
+			<Forecast weather={weather} degrees={degrees} />
+			<DetailsInfo weather={weather} degrees={degrees} />
 
 			<WeatherApiSignature />
 		</Box>

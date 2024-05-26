@@ -1,0 +1,17 @@
+.tabs {
+	margin: 16px -16px -16px;
+	padding: 8px 0px;
+}
+
+.title {
+	font-weight: 800;
+}
+
+.subtitle {
+	font-weight: 500;
+}
+
+.image {
+	width: 48px;
+	margin: -8px 0px;
+}

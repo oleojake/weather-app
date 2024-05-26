@@ -1,9 +1,4 @@
-import {
-	Container,
-	CssBaseline,
-	ThemeProvider,
-	createTheme,
-} from "@mui/material";
+import { Container, CssBaseline, ThemeProvider } from "@mui/material";
 import React, { useState } from "react";
 import { getCurrentWeather } from "./api/weather.api";
 import { CurrentWeaterVM, createEmptyWeather } from "./weather.vm";
@@ -12,119 +7,33 @@ import { WeatherInfo } from "./components/WeatherInfo";
 import { Title } from "./components/Title";
 import { AlertMessage } from "./components/AlertMessage";
 import { Options } from "./components/Options";
-
-const themePink = createTheme({
-	palette: {
-		mode: "light",
-		primary: {
-			main: "#A04860",
-		},
-		secondary: {
-			main: "#F16C90",
-		},
-		background: {
-			default: "#FFBEC2",
-		},
-	},
-	typography: {
-		fontFamily: "Raleway, sans serif",
-	},
-});
-
-const themeYellow = createTheme({
-	palette: {
-		mode: "light",
-		primary: {
-			main: "#CB764D",
-		},
-		secondary: {
-			main: "#FF9661",
-		},
-		background: {
-			default: "#FBC2A4",
-		},
-	},
-	typography: {
-		fontFamily: "Raleway, sans serif",
-	},
-});
-
-const themeCyan = createTheme({
-	palette: {
-		mode: "light",
-		primary: {
-			main: "#40668A",
-		},
-		secondary: {
-			main: "#619ACF",
-		},
-		background: {
-			default: "#95D3E2",
-		},
-	},
-	typography: {
-		fontFamily: "Raleway, sans serif",
-	},
-});
-
-const themeGreen = createTheme({
-	palette: {
-		mode: "light",
-		primary: {
-			main: "#326B65",
-		},
-		secondary:{
-			main: "#4CA198",
-		},
-		background: {
-			default: "#6DC7BE",
-		},
-	},
-	typography: {
-		fontFamily: "Raleway, sans serif",
-	},
-});
-
-const themeViolet = createTheme({
-	palette: {
-		mode: "light",
-		primary: {
-			main: "#64528E",
-		},
-		secondary: {
-			main: "#7963AB",
-		},
-		background: {
-			default: "#C1A3E1",
-		},
-	},
-	typography: {
-		fontFamily: "Raleway, sans serif",
-	},
-});
+import { THEMES } from "./themes";
+import { Theme } from "@mui/material";
 
 export const App: React.FC = () => {
-	const [palette, setPalette] = useState("pink");
-	const handleChangePalette = (
-		event: React.MouseEvent<HTMLElement>,
-		newPalette: string
-	) => {
-		setPalette(newPalette);
-	};
 	const [city, setCity] = useState("");
 	const [error, setError] = useState({
 		error: false,
 		message: "",
 	});
-	const [open, setOpen] = useState(false);
-	const [degrees, setDegrees] = useState("C");
 
+	const [degrees, setDegrees] = useState("C");
 	const handleChangeDegrees = (
 		event: React.MouseEvent<HTMLElement>,
 		newDegrees: string
 	) => {
 		setDegrees(newDegrees);
 	};
+
+	const [palette, setPalette] = useState(THEMES.yellow);
+	const handleChangePalette = (
+		event: React.MouseEvent<HTMLElement>,
+		newPalette: Theme
+	) => {
+		setPalette(newPalette);
+	};
+
+	const [open, setOpen] = useState(false); // Alert message
 
 	const [weather, setWeather] = useState<CurrentWeaterVM>(createEmptyWeather());
 
@@ -167,19 +76,7 @@ export const App: React.FC = () => {
 	};
 
 	return (
-		<ThemeProvider
-			theme={
-				palette === "pink"
-					? themePink
-					: palette === "yellow"
-					? themeYellow
-					: palette === "cyan"
-					? themeCyan
-					: palette === "green"
-					? themeGreen
-					: themeViolet
-			}
-		>
+		<ThemeProvider theme={palette ? palette : THEMES.yellow}>
 			<CssBaseline />
 			<Container maxWidth="xs" sx={{ pt: 2 }}>
 				<Title />

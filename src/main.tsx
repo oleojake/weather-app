@@ -7,13 +7,15 @@ import "@fontsource/roboto/500.css";
 import "@fontsource/roboto/700.css";
 import "./index.css";
 
-
 import { SnackbarProvider } from "notistack";
+import { StyledEngineProvider } from "@mui/material";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
 	<React.StrictMode>
 		<SnackbarProvider>
-			<App />
+			<StyledEngineProvider injectFirst>
+				<App />
+			</StyledEngineProvider>
 		</SnackbarProvider>
 	</React.StrictMode>
 );

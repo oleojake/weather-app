@@ -1,4 +1,4 @@
-import {Forecastday } from "./api/model.api";
+import { Forecastday } from "./api/model.api";
 
 export interface CurrentWeaterVM {
 	city: string;

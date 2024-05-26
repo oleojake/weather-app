@@ -1,9 +1,12 @@
+import { Theme } from "@mui/material";
 import {
 	Box,
 	ToggleButton,
 	ToggleButtonGroup,
 	Typography,
 } from "@mui/material";
+import { THEMES } from "../themes";
+import classes from "./Options.module.css";
 
 interface Props {
 	degrees: string;
@@ -11,24 +14,19 @@ interface Props {
 		event: React.MouseEvent<HTMLElement>,
 		newDegress: string
 	) => void;
-	palette: string;
+	palette: Theme;
 	handleChangePalette: (
 		event: React.MouseEvent<HTMLElement>,
-		newPalette: string
+		newPalette: Theme
 	) => void;
 }
 
 export const Options: React.FC<Props> = (props) => {
 	const { degrees, handleChangeDegrees, palette, handleChangePalette } = props;
 	return (
-		<Box
-			sx={{
-				display: "flex",
-				justifyContent: "space-between",
-			}}
-		>
-			<Box sx={{ display: "flex", gap: "10px", alignItems: "end", mt: 2 }}>
-				<Typography variant="body2" component="p" sx={{ fontWeight: "500" }}>
+		<Box className={classes.container}>
+			<Box className={classes.palette}>
+				<Typography variant="body2" component="p">
 					Palette:
 				</Typography>
 				<ToggleButtonGroup
@@ -38,20 +36,7 @@ export const Options: React.FC<Props> = (props) => {
 					onChange={handleChangePalette}
 				>
 					<ToggleButton
-						value={"pink"}
-						sx={{
-							padding: "10px",
-							backgroundColor: "#FFBEC2",
-							"&.MuiToggleButton-root.Mui-selected": {
-								backgroundColor: "default.main",
-								borderWidth: "2px",
-								borderStyle: "solid",
-								borderColor: "primary.main",
-							},
-						}}
-					></ToggleButton>
-					<ToggleButton
-						value="yellow"
+						value={THEMES.yellow}
 						sx={{
 							padding: "10px",
 							backgroundColor: "#FBC2A4",
@@ -61,10 +46,29 @@ export const Options: React.FC<Props> = (props) => {
 								borderStyle: "solid",
 								borderColor: "primary.main",
 							},
+							"&:hover": {
+								backgroundColor: "#FBC2A4",
+							},
 						}}
 					></ToggleButton>
 					<ToggleButton
-						value="cyan"
+						value={THEMES.pink}
+						sx={{
+							padding: "10px",
+							backgroundColor: "#FFBEC2",
+							"&.MuiToggleButton-root.Mui-selected": {
+								backgroundColor: "default.main",
+								borderWidth: "2px",
+								borderStyle: "solid",
+								borderColor: "primary.main",
+							},
+							"&:hover": {
+								backgroundColor: "#FFBEC2",
+							},
+						}}
+					></ToggleButton>
+					<ToggleButton
+						value={THEMES.cyan}
 						sx={{
 							padding: "10px",
 							backgroundColor: "#95D3E2",
@@ -74,10 +78,13 @@ export const Options: React.FC<Props> = (props) => {
 								borderStyle: "solid",
 								borderColor: "primary.main",
 							},
+							"&:hover": {
+								backgroundColor: "#95D3E2",
+							},
 						}}
 					></ToggleButton>
 					<ToggleButton
-						value="green"
+						value={THEMES.green}
 						sx={{
 							padding: "10px",
 							backgroundColor: "#6DC7BE",
@@ -87,10 +94,13 @@ export const Options: React.FC<Props> = (props) => {
 								borderStyle: "solid",
 								borderColor: "primary.main",
 							},
+							"&:hover": {
+								backgroundColor: "#6DC7BE",
+							},
 						}}
 					></ToggleButton>
 					<ToggleButton
-						value="violet"
+						value={THEMES.violet}
 						sx={{
 							padding: "10px",
 							backgroundColor: "#C1A3E1",
@@ -100,12 +110,15 @@ export const Options: React.FC<Props> = (props) => {
 								borderStyle: "solid",
 								borderColor: "primary.main",
 							},
+							"&:hover": {
+								backgroundColor: "#C1A3E1",
+							},
 						}}
 					></ToggleButton>
 				</ToggleButtonGroup>
 			</Box>
-			<Box sx={{ display: "flex", gap: "10px", alignItems: "end" }}>
-				<Typography variant="body2" component="p" sx={{ mt: 2, fontWeight: "500" }}>
+			<Box className={classes.toggle}>
+				<Typography variant="body2" component="p">
 					Degrees:
 				</Typography>
 				<ToggleButtonGroup

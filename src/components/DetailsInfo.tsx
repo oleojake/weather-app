@@ -1,5 +1,6 @@
 import { Box, Divider, Typography } from "@mui/material";
 import { CurrentWeaterVM } from "../weather.vm";
+import classes from "./DetailsInfo.module.css";
 
 interface Props {
 	weather: CurrentWeaterVM;
@@ -10,35 +11,37 @@ export const DetailsInfo: React.FC<Props> = (props) => {
 	const { weather, degrees } = props;
 	return (
 		<Box>
-			<Typography
-				variant="h5"
-				component="h3"
-				sx={{ fontWeight: "800", mt: 2, mb: 2 }}
-			>
+			<Typography variant="h5" component="h3" className={classes.title}>
 				Weather Details
 			</Typography>
 
-			<Box sx={{ display: "flex", flexDirection: "column" }}>
-				<Box sx={{ display: "flex", justifyContent: "space-between" }}>
-					<Typography variant="body1" component="p" sx={{ fontWeight: "500" }}>
+			<Box className={classes.mainContainer}>
+				<Box className={classes.row}>
+					<Typography variant="body1" component="p" className={classes.item}>
 						High Temperature
 					</Typography>
 					<Typography variant="body1" component="p">
-						{degrees === "C" ? weather.forecast[0].day.maxtemp_c : weather.forecast[0].day.maxtemp_f} º
+						{degrees === "C"
+							? weather.forecast[0].day.maxtemp_c
+							: weather.forecast[0].day.maxtemp_f}{" "}
+						º
 					</Typography>
 				</Box>
 				<Divider sx={{ my: 0.5, borderColor: "primary.main" }} />
-				<Box sx={{ display: "flex", justifyContent: "space-between" }}>
-					<Typography variant="body1" component="p" sx={{ fontWeight: "500" }}>
+				<Box className={classes.row}>
+					<Typography variant="body1" component="p" className={classes.item}>
 						Low Temperature
 					</Typography>
 					<Typography variant="body1" component="p">
-						{degrees === "C" ? weather.forecast[0].day.mintemp_c : weather.forecast[0].day.mintemp_f} °
+						{degrees === "C"
+							? weather.forecast[0].day.mintemp_c
+							: weather.forecast[0].day.mintemp_f}{" "}
+						°
 					</Typography>
 				</Box>
 				<Divider sx={{ my: 0.5, borderColor: "primary.main" }} />
-				<Box sx={{ display: "flex", justifyContent: "space-between" }}>
-					<Typography variant="body1" component="p" sx={{ fontWeight: "500" }}>
+				<Box className={classes.row}>
+					<Typography variant="body1" component="p" className={classes.item}>
 						Humidity
 					</Typography>
 					<Typography variant="body1" component="p">
@@ -46,8 +49,8 @@ export const DetailsInfo: React.FC<Props> = (props) => {
 					</Typography>
 				</Box>
 				<Divider sx={{ my: 0.5, borderColor: "primary.main" }} />
-				<Box sx={{ display: "flex", justifyContent: "space-between" }}>
-					<Typography variant="body1" component="p" sx={{ fontWeight: "500" }}>
+				<Box className={classes.row}>
+					<Typography variant="body1" component="p" className={classes.item}>
 						Feelslike
 					</Typography>
 					<Typography variant="body1" component="p">
@@ -55,8 +58,8 @@ export const DetailsInfo: React.FC<Props> = (props) => {
 					</Typography>
 				</Box>
 				<Divider sx={{ my: 0.5, borderColor: "primary.main" }} />
-				<Box sx={{ display: "flex", justifyContent: "space-between" }}>
-					<Typography variant="body1" component="p" sx={{ fontWeight: "500" }}>
+				<Box className={classes.row}>
+					<Typography variant="body1" component="p" className={classes.item}>
 						Wind Speed
 					</Typography>
 					<Typography variant="body1" component="p">
@@ -64,8 +67,8 @@ export const DetailsInfo: React.FC<Props> = (props) => {
 					</Typography>
 				</Box>
 				<Divider sx={{ my: 0.5, borderColor: "primary.main" }} />
-				<Box sx={{ display: "flex", justifyContent: "space-between" }}>
-					<Typography variant="body1" component="p" sx={{ fontWeight: "500" }}>
+				<Box className={classes.row}>
+					<Typography variant="body1" component="p" className={classes.item}>
 						Wind Degree
 					</Typography>
 					<Typography variant="body1" component="p">
@@ -73,8 +76,8 @@ export const DetailsInfo: React.FC<Props> = (props) => {
 					</Typography>
 				</Box>
 				<Divider sx={{ my: 0.5, borderColor: "primary.main" }} />
-				<Box sx={{ display: "flex", justifyContent: "space-between" }}>
-					<Typography variant="body1" component="p" sx={{ fontWeight: "500" }}>
+				<Box className={classes.row}>
+					<Typography variant="body1" component="p" className={classes.item}>
 						Wind Direction
 					</Typography>
 					<Typography variant="body1" component="p">
@@ -82,8 +85,8 @@ export const DetailsInfo: React.FC<Props> = (props) => {
 					</Typography>
 				</Box>
 				<Divider sx={{ my: 0.5, borderColor: "primary.main" }} />
-				<Box sx={{ display: "flex", justifyContent: "space-between" }}>
-					<Typography variant="body1" component="p" sx={{ fontWeight: "500" }}>
+				<Box className={classes.row}>
+					<Typography variant="body1" component="p" className={classes.item}>
 						Clouds
 					</Typography>
 					<Typography variant="body1" component="p">
@@ -91,8 +94,8 @@ export const DetailsInfo: React.FC<Props> = (props) => {
 					</Typography>
 				</Box>
 				<Divider sx={{ my: 0.5, borderColor: "primary.main" }} />
-				<Box sx={{ display: "flex", justifyContent: "space-between" }}>
-					<Typography variant="body1" component="p" sx={{ fontWeight: "500" }}>
+				<Box className={classes.row}>
+					<Typography variant="body1" component="p" className={classes.item}>
 						Precipitations
 					</Typography>
 					<Typography variant="body1" component="p">
@@ -100,8 +103,8 @@ export const DetailsInfo: React.FC<Props> = (props) => {
 					</Typography>
 				</Box>
 				<Divider sx={{ my: 0.5, borderColor: "primary.main" }} />
-				<Box sx={{ display: "flex", justifyContent: "space-between" }}>
-					<Typography variant="body1" component="p" sx={{ fontWeight: "500" }}>
+				<Box className={classes.row}>
+					<Typography variant="body1" component="p" className={classes.item}>
 						UV Index
 					</Typography>
 					<Typography variant="body1" component="p">
