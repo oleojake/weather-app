@@ -19,7 +19,7 @@ export const App: React.FC = () => {
 
 	const [degrees, setDegrees] = useState("C");
 	const handleChangeDegrees = (
-		event: React.MouseEvent<HTMLElement>,
+		_event: React.MouseEvent<HTMLElement>,
 		newDegrees: string
 	) => {
 		setDegrees(newDegrees);
@@ -27,7 +27,7 @@ export const App: React.FC = () => {
 
 	const [palette, setPalette] = useState(THEMES.yellow);
 	const handleChangePalette = (
-		event: React.MouseEvent<HTMLElement>,
+		_event: React.MouseEvent<HTMLElement>,
 		newPalette: Theme
 	) => {
 		setPalette(newPalette);
