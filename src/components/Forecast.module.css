@@ -15,3 +15,7 @@
 	width: 48px;
 	margin: -8px 0px;
 }
+
+.tabs div {
+	justify-content: center;
+}
